@@ -1,0 +1,443 @@
+@font-face {
+    font-family: lakeshore;
+    src: url("fonts/LAKESHOR-webfont.svg");
+    src: url("fonts/LAKESHOR-webfont.woff");
+}
+
+:root {
+    --thumbnails-img-width: 25vw;
+    --thumbnails-img-height: 15vw;
+    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
+}
+
+body,
+html {
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-image: url("/Users/michaelisaev/Documents/Course/html-css-js-introduction-/homework-album-covers/images/Background.jpeg")
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.thumbnails-music {}
+
+.logo {
+
+    display: block;
+    text-align: center;
+    background-image: url("/Users/michaelisaev/Documents/Course/html-css-js-introduction-/homework-album-covers/images/backlogo.jpeg");
+    margin-top: -1vh;
+
+}
+
+.logo-image {
+    width: 12vh;
+    height: 12vh;
+    padding-top: 2vh;
+}
+
+.main-class {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.main-class.hidden {
+
+    --thumbnails-img-width: 35vw;
+    --thumbnails-img-height: 25vw;
+    --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3vh;
+    transition: 5s cubic-bezier(0.1, 2, 0.9, 1);
+
+}
+
+.hidden .details-container {
+    display: none;
+}
+
+.details-image {
+    width: 65vw;
+    height: 65vw;
+    border-radius: 25%;
+    border: solid 3px rgb(0, 0, 0);
+
+}
+
+/* .details-image:hover {
+    transform: scale(1.1);
+    margin-left: 1vw;
+} */
+
+.details-frame {
+    position: relative;
+    margin-bottom: 5vh;
+}
+
+.hide-button {
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    background-color: #f7d387;
+    border-radius: 5%;
+    ;
+
+}
+
+.details-title {
+    display: block;
+    font-size: 1em;
+    font-style: italic;
+    color: rgb(0, 0, 0);
+    bottom: 1vw;
+    position: absolute;
+    left: 3vw;
+    bottom: 2vw;
+    background-color: rgb(221, 171, 132);
+    border-radius: 3vw;
+
+}
+
+.thumbnails-list {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 29vh;
+    overflow-y: auto;
+    justify-content: space-around;
+    padding-left: 3vw;
+    margin-left: -5vw;
+    margin-bottom: -3vh;
+    padding: 1vh;
+    margin: 0;
+
+}
+
+.hidden .thumbnails-list {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 89vh;
+    padding-left: 0;
+    margin-bottom: 1vh;
+    margin: 0;
+    padding: 0;
+    margin-left: 0;
+    overflow-y: auto;
+
+}
+
+.thumbnails-item {
+    max-width: var(--thumbnails-img-width);
+    min-height: calc(var(--thumbnails-img-height) + var(--thumbnails-title-height));
+    margin-top: 2.5vh;
+    border: solid 2px rgb(0, 0, 0);
+    border-radius: 25%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.hidden .thumbnails-item {
+    margin: 1.2vh;
+
+}
+
+.thumbnails-image {
+    width: var(--thumbnails-img-width);
+    height: var(--thumbnails-img-height);
+    display: block;
+
+}
+
+.thumbnails-title {
+    display: block;
+    text-align: center;
+    height: var(--thumbnails-title-height);
+    background-color: rgb(244, 197, 111);
+    color: rgb(0, 0, 0);
+    font-size: 0.6em;
+    justify-content: space-around;
+
+}
+
+.hidden .thumbnails-title {
+    font-size: 0.8em;
+}
+
+.thumbnails-anchor {
+    text-decoration: none;
+}
+
+.thumbnails-item:hover {
+    transform: scale(1.1);
+    margin-left: 1vw;
+}
+
+.external-cite {
+
+    color: rgb(30, 79, 91);
+    background-color: rgb(219, 179, 130);
+    font-style: italic;
+    border-radius: 25%;
+    margin-top: vh;
+    font-size: medium;
+
+}
+
+.external-cite:hover {
+
+    transform: scale(1.2);
+}
+
+.footer {
+
+    font-size: xx-small;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0%;
+    font: sans-serif;
+}
+
+.hidden .footer {
+
+    display: none;
+}
+
+.external-cite:link {
+
+    color: rgb(135, 22, 167);
+}
+
+.external-cite:visited {
+
+    color: rgb(0, 0, 0)
+}
+
+.external-cite:hover {
+
+    color: yellow;
+}
+
+.is-point {
+    transform: scale(0.001);
+    transition: 0s;
+}
+
+@media (min-width: 560px) {
+
+    .logo-image {
+        margin-top: 0.5vh;
+    }
+
+    .thumbnails-list {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        max-height: 120vh;
+        max-width: 50vh;
+        order: -1;
+        justify-content: flex-start;
+        margin-top: 0;
+        margin-bottom: 13vh;
+    }
+
+    .hidden .thumbnails-list {
+        max-height: 85vh;
+        max-width: 190vh;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 10vh;
+        margin-top: 0.1vh;
+    }
+
+    .thumbnails-title {
+        font-size: 0.9em;
+    }
+
+    .hidden .thumbnails-title {
+        font-size: 3vh;
+    }
+
+    .main-class {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .details-image {
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .details-container {
+        margin-top: 4vh;
+        font-size: 0.7em;
+        margin-left: 15vw;
+    }
+
+    .details-title {
+
+        font-size: 13px;
+        bottom: 4vw;
+    }
+
+    .external-cite {
+        margin-top: 0vh;
+        font-size: smaller;
+    }
+
+    .footer {
+        font: 0.3em sans-serif;
+    }
+
+    .thumbnails-item {
+        margin: 10px;
+
+    }
+
+    .hidden .thumbnails-item {
+        width: calc(var((--thumbnails-img-width)-100vw));
+        height: calc(var((--thumbnails-img-height)-100vh));
+        margin-top: 2.5vh;
+        border: solid 2px rgb(0, 0, 0);
+        border-radius: 25%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hidden .thumbnails-title {
+        font-size: 0.8em;
+        padding-top: 2vh;
+    }
+
+    .main-class.hidden {
+
+        --thumbnails-img-width: 21vw;
+        --thumbnails-img-height: 16vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
+    }
+}
+
+@media (min-width: 900px) {
+
+    .logo {
+        padding-top: 1vh;
+        block-size: 5vw;
+        font-size: 6vh;
+        height: 35vh;
+        width: 35v;
+
+    }
+
+    .thumbnails-list {
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 15vw;
+        max-height: 450vh;
+        padding-right: 3vh;
+        padding-left: 0;
+        justify-content:space-around;
+        margin-top: -1px;
+        
+    }
+
+    .hidden .thumbnails-list {
+        margin-top: -0.1vh;
+        margin-right: 10vh;
+        
+
+    }
+
+    .hidden .thumbnails-item {
+       
+        margin-top: 2.5vh;
+        border: solid 1px rgb(0, 0, 0);
+        border-radius: 25%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .thumbnails-image {
+        width: calc(var(--thumbnails-img-width)*0.5);
+        height: calc(var(--thumbnails-img-height) * 0.6);
+
+    }
+
+    .thumbnails-title {
+
+        font-size: 1.2vw;
+        height: calc(var(--thumbnails-title-height) *0.5);
+    }
+
+    .hidden .thumbnails-title {
+        font-size: xx-large;
+    }
+
+    .details-image {
+        width: 33vw;
+        height: 33vw;
+        border-radius: 25%;
+
+    }
+
+    .details-title {
+        font-size: 1.5em;
+    }
+
+    .footer {
+        font-size: small;
+        size: 10vh;
+    }
+
+    .external-cite {
+        font-size: medium;
+
+    }
+
+    .thumbnails-item {
+
+        min-height: 1vh;
+    }
+
+    .details-container {
+        display: inline-flex;
+        justify-content: center;
+        margin-bottom: 22vh;
+    }
+
+    .hidden .footer {
+        display: block;
+    }
+
+    .main-class.hidden {
+
+        --thumbnails-img-width: 55vw;
+        --thumbnails-img-height: 35vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height) * 0.33)
+    }
+}
