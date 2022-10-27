@@ -15,7 +15,7 @@ html {
     height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
-    background-image: url("/Users/michaelisaev/Documents/Course/html-css-js-introduction-/homework-album-covers/images/Background.jpeg")
+    background-image: url("../images/Background.jpeg")
 }
 
 body {
@@ -30,7 +30,7 @@ body {
 
     display: block;
     text-align: center;
-    background-image: url("/Users/michaelisaev/Documents/Course/html-css-js-introduction-/homework-album-covers/images/backlogo.jpeg");
+    background-image: url("../images/backlogo.jpeg");
     margin-top: -1vh;
 
 }
